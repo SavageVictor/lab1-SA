@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Go Server Time</title>
+	<script>
+		async function fetchServerTime() {
+			const response = await fetch('/gettime');
+			const serverTimeResponse = await response.json();
+			document.getElementById('server-time').innerText = serverTimeResponse.time;
+		}
+	</script>
+</head>
+<body>
+	<h1>Go Server Time</h1>
+	<button onclick="fetchServerTime()">Get Server Time</button>
+	<p>Server time: <span id="server-time"></span></p>
+</body>
+</html>
